@@ -1,0 +1,1251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d19">
+<title>ABN-7742 | Private Operations</title>
+
+<style>
+:root {
+  --bg:#080d19;
+  --panel:#111a2b;
+  --panel2:#172238;
+  --gold:#e9c46a;
+  --text:#edf2fa;
+  --muted:#91a0b8;
+  --line:#26344c;
+  --green:#40c997;
+  --red:#ff7070;
+  --blue:#70aaff;
+}
+
+* {box-sizing:border-box}
+
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,sans-serif;
+  min-height:100vh;
+}
+
+button,input,select,textarea {font:inherit}
+
+button {
+  cursor:pointer;
+}
+
+.hidden {display:none!important}
+
+.topbar {
+  background:#0e1728;
+  border-bottom:1px solid var(--line);
+  padding:17px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+.brand {
+  color:var(--gold);
+  font-size:20px;
+  font-weight:bold;
+}
+
+.brand small {
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  letter-spacing:2px;
+  margin-top:5px;
+}
+
+.status {
+  color:var(--green);
+  font-size:12px;
+}
+
+.login-wrap {
+  max-width:430px;
+  margin:65px auto;
+  padding:20px;
+}
+
+.panel {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:23px;
+}
+
+h1,h2,h3 {margin-top:0}
+
+.login-wrap h2 {
+  color:var(--gold);
+  text-align:center;
+}
+
+.muted {
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+}
+
+label {
+  display:block;
+  margin:17px 0 7px;
+  font-size:13px;
+  color:#c8d3e5;
+}
+
+input,select,textarea {
+  width:100%;
+  background:#091324;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:13px;
+  color:white;
+  outline:none;
+}
+
+input:focus,select:focus,textarea:focus {
+  border-color:var(--gold);
+}
+
+.primary {
+  background:var(--gold);
+  color:#171717;
+  border:0;
+  border-radius:8px;
+  padding:13px 18px;
+  font-weight:bold;
+  width:100%;
+  margin-top:20px;
+}
+
+.secondary {
+  background:var(--panel2);
+  color:white;
+  border:1px solid var(--line);
+  border-radius:7px;
+  padding:10px 13px;
+}
+
+.danger {
+  color:var(--red);
+  border-color:#703737;
+}
+
+.message {
+  font-size:13px;
+  margin-top:14px;
+  color:var(--red);
+  line-height:1.5;
+}
+
+.layout {
+  display:grid;
+  grid-template-columns:235px 1fr;
+  min-height:calc(100vh - 65px);
+}
+
+.sidebar {
+  background:#0e1728;
+  border-right:1px solid var(--line);
+  padding:20px 12px;
+}
+
+.sidebar p {
+  font-size:10px;
+  color:var(--muted);
+  letter-spacing:2px;
+  padding-left:12px;
+}
+
+.nav {
+  width:100%;
+  display:block;
+  text-align:left;
+  background:transparent;
+  color:#b9c6d9;
+  border:0;
+  padding:13px;
+  border-radius:7px;
+  margin:3px 0;
+  font-size:13px;
+}
+
+.nav:hover,.nav.active {
+  background:#202d45;
+  color:var(--gold);
+}
+
+main {
+  padding:25px;
+  min-width:0;
+}
+
+.page-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-bottom:24px;
+}
+
+.page-heading h1 {
+  font-size:24px;
+  margin:0;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+  margin-bottom:23px;
+}
+
+.stat {
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:19px;
+  border-radius:11px;
+}
+
+.stat span {
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.stat strong {
+  display:block;
+  color:var(--gold);
+  font-size:27px;
+  margin-top:12px;
+}
+
+.section {
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:20px;
+  margin-bottom:18px;
+  overflow:hidden;
+}
+
+.section h3 {
+  font-size:16px;
+  margin-bottom:17px;
+}
+
+.table-wrap {overflow-x:auto}
+
+table {
+  width:100%;
+  border-collapse:collapse;
+  min-width:580px;
+}
+
+th,td {
+  padding:13px 10px;
+  text-align:left;
+  border-bottom:1px solid var(--line);
+  font-size:12px;
+}
+
+th {
+  color:var(--muted);
+  font-weight:normal;
+}
+
+td {color:#e0e8f5}
+
+.badge {
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:20px;
+  background:#28354a;
+  font-size:10px;
+}
+
+.pending {color:var(--gold)}
+.approved {color:var(--green)}
+.rejected {color:var(--red)}
+
+.actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.actions button {
+  font-size:11px;
+}
+
+textarea {
+  min-height:110px;
+  resize:vertical;
+}
+
+.footer {
+  padding:18px;
+  text-align:center;
+  color:var(--muted);
+  font-size:11px;
+}
+
+@media(max-width:850px) {
+  .layout {grid-template-columns:1fr}
+  .sidebar {
+    display:flex;
+    overflow-x:auto;
+    border-right:0;
+    border-bottom:1px solid var(--line);
+    padding:8px;
+  }
+  .sidebar p {display:none}
+  .nav {
+    white-space:nowrap;
+    width:auto;
+  }
+  .grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  main {padding:15px}
+}
+
+@media(max-width:400px) {
+  .grid {grid-template-columns:1fr 1fr}
+  .stat {padding:12px}
+  .stat strong {font-size:22px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    ABN-7742
+    <small>PRIVATE OPERATIONS</small>
+  </div>
+  <div class="status" id="connectionStatus">
+    Secure session required
+  </div>
+</header>
+
+<!-- ADMIN AUTHENTICATION -->
+
+<section id="loginScreen" class="login-wrap">
+  <div class="panel">
+    <h2>Administrator Access</h2>
+    <p class="muted">
+      Restricted administration access.
+      Your identity must be verified before entering.
+    </p>
+
+    <form id="loginForm">
+      <label>Administrator email</label>
+      <input id="email" type="email"
+        autocomplete="username" required>
+
+      <label>Password</label>
+      <input id="password" type="password"
+        autocomplete="current-password" required>
+
+      <button class="primary" type="submit">
+        Authenticate
+      </button>
+    </form>
+
+    <form id="mfaForm" class="hidden">
+      <label>Multi-factor authentication code</label>
+      <input id="mfaCode" type="text"
+        inputmode="numeric" autocomplete="one-time-code"
+        required maxlength="12">
+
+      <button class="primary" type="submit">
+        Verify identity
+      </button>
+    </form>
+
+    <div id="authMessage" class="message"></div>
+  </div>
+</section>
+
+<!-- PRIVATE ADMIN DASHBOARD -->
+
+<section id="adminScreen" class="hidden">
+
+<div class="layout">
+
+<aside class="sidebar">
+  <p>OPERATIONS</p>
+
+  <button class="nav active" data-page="dashboard">
+    Overview
+  </button>
+
+  <button class="nav" data-page="applications">
+    Membership applications
+  </button>
+
+  <button class="nav" data-page="verification">
+    Verification reviews
+  </button>
+
+  <button class="nav" data-page="vendors">
+    Vendor management
+  </button>
+
+  <button class="nav" data-page="subscriptions">
+    Subscriptions & payments
+  </button>
+
+  <button class="nav" data-page="interviews">
+    Interviews
+  </button>
+
+  <button class="nav" data-page="communications">
+    Vendor communications
+  </button>
+
+  <button class="nav" data-page="audit">
+    Audit records
+  </button>
+
+  <button class="nav" data-page="security">
+    Security monitoring
+  </button>
+
+  <button class="nav" id="logoutButton">
+    Sign out
+  </button>
+</aside>
+
+<main>
+
+<!-- OVERVIEW -->
+
+<section id="dashboard" class="page">
+
+<div class="page-heading">
+  <h1>Operations Overview</h1>
+  <span class="badge approved">Private access</span>
+</div>
+
+<div class="grid">
+
+  <div class="stat">
+    <span>Total vendors</span>
+    <strong id="totalVendors">—</strong>
+  </div>
+
+  <div class="stat">
+    <span>Pending applications</span>
+    <strong id="pendingApplications">—</strong>
+  </div>
+
+  <div class="stat">
+    <span>Awaiting verification</span>
+    <strong id="pendingVerification">—</strong>
+  </div>
+
+  <div class="stat">
+    <span>Active subscriptions</span>
+    <strong id="activeSubscriptions">—</strong>
+  </div>
+
+</div>
+
+<div class="section">
+  <h3>Recent operations</h3>
+  <p class="muted" id="overviewMessage">
+    Waiting for authorised server data.
+  </p>
+</div>
+
+<div class="section">
+  <h3>Important operational rules</h3>
+  <p class="muted">
+    Membership plans are weekly or monthly only.
+    No annual subscription option.
+  </p>
+  <p class="muted">
+    Vendor verification and membership communications
+    must be delivered through the vendor's own
+    business website.
+  </p>
+  <p class="muted">
+    Vendor records and confidential operational
+    information must remain access-controlled.
+  </p>
+</div>
+
+</section>
+
+<!-- APPLICATIONS -->
+
+<section id="applications" class="page hidden">
+  <div class="page-heading">
+    <h1>Membership Applications</h1>
+  </div>
+
+  <div class="section">
+    <h3>Application records</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Applicant</th>
+            <th>Business</th>
+            <th>Application date</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="applicationsTable">
+          <tr><td colspan="5">Awaiting server data</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- VERIFICATION -->
+
+<section id="verification" class="page hidden">
+  <div class="page-heading">
+    <h1>Verification Centre</h1>
+  </div>
+
+  <div class="section">
+    <h3>Submitted verification materials</h3>
+    <p class="muted">
+      Review documents submitted through each vendor's
+      private business website. Document access must
+      be authorised and recorded by the server.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Vendor</th>
+            <th>Document category</th>
+            <th>Submitted</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="verificationTable">
+          <tr><td colspan="5">Awaiting server data</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- VENDORS -->
+
+<section id="vendors" class="page hidden">
+  <div class="page-heading">
+    <h1>Vendor Management</h1>
+  </div>
+
+  <div class="section">
+    <h3>Registered vendors</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Vendor</th>
+            <th>Category</th>
+            <th>Location</th>
+            <th>Membership</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="vendorsTable">
+          <tr><td colspan="5">Awaiting server data</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIPTIONS -->
+
+<section id="subscriptions" class="page hidden">
+  <div class="page-heading">
+    <h1>Subscriptions & Payments</h1>
+  </div>
+
+  <div class="section">
+    <h3>Membership payment records</h3>
+    <p class="muted">
+      Weekly and monthly subscriptions only.
+      Payment verification must be confirmed
+      by the authorised backend.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Vendor</th>
+            <th>Plan</th>
+            <th>Amount</th>
+            <th>Payment status</th>
+            <th>Expiry</th>
+          </tr>
+        </thead>
+        <tbody id="subscriptionsTable">
+          <tr><td colspan="5">Awaiting server data</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- INTERVIEWS -->
+
+<section id="interviews" class="page hidden">
+  <div class="page-heading">
+    <h1>Interview Management</h1>
+  </div>
+
+  <div class="section">
+    <h3>Interview appointments</h3>
+    <p class="muted">
+      Interview dates and instructions are communicated
+      through the individual vendor's business website.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Applicant</th>
+            <th>Interview date</th>
+            <th>Interview status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="interviewsTable">
+          <tr><td colspan="4">Awaiting server data</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- VENDOR COMMUNICATION -->
+
+<section id="communications" class="page hidden">
+  <div class="page-heading">
+    <h1>Vendor Communications</h1>
+  </div>
+
+  <div class="section">
+    <h3>Private vendor website notifications</h3>
+
+    <p class="muted">
+      Send verification requirements, requests for
+      additional documents, payment instructions,
+      interview appointments and membership updates
+      directly to a vendor's private website dashboard.
+    </p>
+
+    <form id="communicationForm">
+
+      <label>Vendor account ID</label>
+      <input id="communicationVendor"
+        required placeholder="Enter vendor ID">
+
+      <label>Notification category</label>
+      <select id="communicationType" required>
+        <option value="">Select category</option>
+        <option value="verification_requirements">
+          Verification requirements
+        </option>
+        <option value="additional_documents">
+          Additional documents required
+        </option>
+        <option value="verification_result">
+          Verification result
+        </option>
+        <option value="payment_instructions">
+          Payment instructions
+        </option>
+        <option value="interview_appointment">
+          Interview appointment
+        </option>
+        <option value="membership_update">
+          Membership update
+        </option>
+      </select>
+
+      <label>Message</label>
+      <textarea id="communicationMessage"
+        required maxlength="5000"
+        placeholder="Enter the approved vendor notification">
+      </textarea>
+
+      <button class="primary" type="submit">
+        Send to vendor website
+      </button>
+
+    </form>
+
+    <p id="communicationStatus" class="muted"></p>
+  </div>
+</section>
+
+<!-- AUDIT -->
+
+<section id="audit" class="page hidden">
+  <div class="page-heading">
+    <h1>Audit Records</h1>
+  </div>
+
+  <div class="section">
+    <h3>Administrative activity</h3>
+    <p class="muted">
+      Review recorded logins, document reviews,
+      membership approvals, payment changes,
+      communications and permission changes.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Administrator</th>
+            <th>Activity</th>
+            <th>Record</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="auditTable">
+          <tr><td colspan="4">Awaiting server data</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY -->
+
+<section id="security" class="page hidden">
+  <div class="page-heading">
+    <h1>Security Monitoring</h1>
+  </div>
+
+  <div class="section">
+    <h3>Security controls</h3>
+
+    <p class="muted">
+      Authentication, mandatory MFA, administrator
+      permissions, session revocation, access logs,
+      suspicious activity detection and security alerts
+      must be enforced by the protected backend.
+    </p>
+
+    <div id="securityData">
+      Waiting for authorised security records.
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+</section>
+
+<div class="footer">
+  ABN-7742 | Restricted administrative environment
+</div>
+
+<script>
+"use strict";
+
+/*
+  PRIVATE ENGINE FRONTEND
+
+  This interface is NOT the security boundary.
+
+  Backend requirements:
+  - HttpOnly, Secure, SameSite session cookies.
+  - Mandatory MFA.
+  - Server-side role permissions.
+  - CSRF protection.
+  - Rate limiting.
+  - Private document storage.
+  - Audit logging.
+  - Vendor data isolation.
+*/
+
+const API = "/api";
+
+let csrfToken = "";
+let mfaPending = false;
+
+const $ = id => document.getElementById(id);
+
+async function request(path, options = {}) {
+
+  const headers = {
+    "Accept": "application/json",
+    ...(options.body ? {
+      "Content-Type": "application/json"
+    } : {}),
+    ...(options.headers || {})
+  };
+
+  if (options.method &&
+      options.method !== "GET" &&
+      options.method !== "HEAD") {
+
+    if (!csrfToken) {
+      throw new Error("Security token unavailable.");
+    }
+
+    headers["X-CSRF-Token"] = csrfToken;
+  }
+
+  const response = await fetch(API + path, {
+    ...options,
+    headers,
+    credentials: "same-origin",
+    cache: "no-store"
+  });
+
+  if (response.status === 401) {
+    showLogin();
+    throw new Error("Authentication required.");
+  }
+
+  if (response.status === 403) {
+    throw new Error("Access denied.");
+  }
+
+  const data = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    throw new Error(data.message || "Request failed.");
+  }
+
+  return data;
+}
+
+function showLogin() {
+  $("adminScreen").classList.add("hidden");
+  $("loginScreen").classList.remove("hidden");
+  $("connectionStatus").textContent =
+    "Authentication required";
+}
+
+function showAdmin() {
+  $("loginScreen").classList.add("hidden");
+  $("adminScreen").classList.remove("hidden");
+  $("connectionStatus").textContent =
+    "Authenticated session";
+}
+
+function message(id, text) {
+  $(id).textContent = text;
+}
+
+async function initialiseSecurity() {
+
+  try {
+    const data = await request(
+      "/security/csrf"
+    );
+
+    csrfToken = data.csrfToken || "";
+
+    if (!csrfToken) {
+      throw new Error("Missing security token.");
+    }
+
+    const session = await request(
+      "/admin/session"
+    );
+
+    if (session.authenticated) {
+      showAdmin();
+      await loadOverview();
+    } else {
+      showLogin();
+    }
+
+  } catch (error) {
+    showLogin();
+    message("authMessage",
+      "Secure backend unavailable. " + error.message);
+  }
+}
+
+/* ADMIN LOGIN */
+
+$("loginForm").addEventListener("submit",
+async event => {
+
+  event.preventDefault();
+
+  message("authMessage", "Authenticating...");
+
+  try {
+
+    const result = await request(
+      "/auth/login",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          email: $("email").value,
+          password: $("password").value
+        })
+      }
+    );
+
+    if (result.mfaRequired) {
+
+      mfaPending = true;
+
+      $("loginForm").classList.add("hidden");
+      $("mfaForm").classList.remove("hidden");
+
+      message("authMessage",
+        "Enter your authentication code.");
+
+      return;
+    }
+
+    throw new Error(
+      "Backend did not enforce mandatory MFA."
+    );
+
+  } catch (error) {
+    message("authMessage", error.message);
+  }
+});
+
+/* MFA VERIFICATION */
+
+$("mfaForm").addEventListener("submit",
+async event => {
+
+  event.preventDefault();
+
+  if (!mfaPending) return;
+
+  try {
+
+    await request(
+      "/auth/mfa/verify",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          code: $("mfaCode").value
+        })
+      }
+    );
+
+    mfaPending = false;
+
+    await initialiseSecurity();
+
+  } catch (error) {
+    message("authMessage", error.message);
+  }
+});
+
+/* PAGE NAVIGATION */
+
+document.querySelectorAll(".nav[data-page]")
+.forEach(button => {
+
+  button.addEventListener("click", async () => {
+
+    document.querySelectorAll(".nav")
+      .forEach(item =>
+        item.classList.remove("active")
+      );
+
+    button.classList.add("active");
+
+    document.querySelectorAll(".page")
+      .forEach(page =>
+        page.classList.add("hidden")
+      );
+
+    $(button.dataset.page).classList.remove("hidden");
+
+    if (button.dataset.page === "dashboard") {
+      await loadOverview();
+    } else {
+      await loadPage(button.dataset.page);
+    }
+  });
+});
+
+/* SAFE TEXT RENDERING */
+
+function cell(value) {
+  const td = document.createElement("td");
+  td.textContent = value == null ? "—" : String(value);
+  return td;
+}
+
+function renderRows(tableId, rows, columns) {
+
+  const tbody = $(tableId);
+  tbody.replaceChildren();
+
+  if (!Array.isArray(rows) || rows.length === 0) {
+    const tr = document.createElement("tr");
+    const td = cell("No records available.");
+    td.colSpan = columns.length;
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+    return;
+  }
+
+  rows.forEach(row => {
+    const tr = document.createElement("tr");
+
+    columns.forEach(key => {
+      tr.appendChild(cell(row[key]));
+    });
+
+    tbody.appendChild(tr);
+  });
+}
+
+/* OVERVIEW DATA */
+
+async function loadOverview() {
+
+  try {
+
+    const data = await request(
+      "/admin/overview"
+    );
+
+    $("totalVendors").textContent =
+      data.totalVendors ?? "—";
+
+    $("pendingApplications").textContent =
+      data.pendingApplications ?? "—";
+
+    $("pendingVerification").textContent =
+      data.pendingVerification ?? "—";
+
+    $("activeSubscriptions").textContent =
+      data.activeSubscriptions ?? "—";
+
+    $("overviewMessage").textContent =
+      "Authorised operational data loaded.";
+
+  } catch (error) {
+
+    $("overviewMessage").textContent =
+      error.message;
+  }
+}
+
+/* OTHER ADMIN SECTIONS */
+
+async function loadPage(page) {
+
+  const routes = {
+    applications: {
+      path: "/admin/applications",
+      table: "applicationsTable",
+      columns: [
+        "applicant",
+        "business",
+        "applicationDate",
+        "status",
+        "action"
+      ]
+    },
+
+    verification: {
+      path: "/admin/verifications",
+      table: "verificationTable",
+      columns: [
+        "vendor",
+        "documentCategory",
+        "submittedAt",
+        "status",
+        "action"
+      ]
+    },
+
+    vendors: {
+      path: "/admin/vendors",
+      table: "vendorsTable",
+      columns: [
+        "vendor",
+        "category",
+        "location",
+        "membership",
+        "status"
+      ]
+    },
+
+    subscriptions: {
+      path: "/admin/subscriptions",
+      table: "subscriptionsTable",
+      columns: [
+        "vendor",
+        "plan",
+        "amount",
+        "paymentStatus",
+        "expiry"
+      ]
+    },
+
+    interviews: {
+      path: "/admin/interviews",
+      table: "interviewsTable",
+      columns: [
+        "applicant",
+        "interviewDate",
+        "status",
+        "action"
+      ]
+    },
+
+    audit: {
+      path: "/admin/audit",
+      table: "auditTable",
+      columns: [
+        "administrator",
+        "activity",
+        "record",
+        "date"
+      ]
+    }
+  };
+
+  try {
+
+    if (page === "security") {
+
+      const data = await request(
+        "/admin/security"
+      );
+
+      $("securityData").textContent =
+        JSON.stringify(data, null, 2);
+
+      return;
+    }
+
+    const config = routes[page];
+
+    if (!config) return;
+
+    const result = await request(config.path);
+
+    renderRows(
+      config.table,
+      result.records,
+      config.columns
+    );
+
+  } catch (error) {
+    console.error("Section loading failed:", error);
+  }
+}
+
+/* PRIVATE VENDOR COMMUNICATION */
+
+$("communicationForm").addEventListener(
+  "submit",
+  async event => {
+
+    event.preventDefault();
+
+    message(
+      "communicationStatus",
+      "Submitting notification..."
+    );
+
+    try {
+
+      await request(
+        "/admin/vendor-notifications",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            vendorId: $("communicationVendor").value,
+            category: $("communicationType").value,
+            message: $("communicationMessage").value
+          })
+        }
+      );
+
+      message(
+        "communicationStatus",
+        "Notification submitted to the vendor website."
+      );
+
+      $("communicationForm").reset();
+
+    } catch (error) {
+
+      message(
+        "communicationStatus",
+        error.message
+      );
+    }
+  }
+);
+
+/* SIGN OUT */
+
+$("logoutButton").addEventListener(
+  "click",
+  async () => {
+
+    try {
+
+      await request(
+        "/auth/logout",
+        {method:"POST"}
+      );
+
+    } catch (error) {
+      console.error(error);
+    }
+
+    csrfToken = "";
+    mfaPending = false;
+
+    $("loginForm").reset();
+    $("mfaForm").reset();
+
+    $("loginForm").classList.remove("hidden");
+    $("mfaForm").classList.add("hidden");
+
+    showLogin();
+
+    message("authMessage",
+      "Session closed. Sign in again.");
+  }
+);
+
+/* START */
+
+initialiseSecurity();
+
+</script>
+</body>
+</html>
