@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#081321">
+<meta name="description" content="Awesome Builders Network ABN-7742 connects businesses, professional engineers, technical practitioners, tradespeople, suppliers and service providers.">
+<title>Awesome Builders Network | ABN-7742</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+<style>
+:root {
+  --navy:#081321;
+  --navy2:#10243a;
+  --gold:#d5ad59;
+  --gold2:#f0d18a;
+  --white:#ffffff;
+  --light:#f4f6f8;
+  --muted:#aab5c2;
+  --ink:#172536;
+  --border:#e1e5e9;
+  --green:#287a55;
+}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth;scroll-padding-top:90px}
+body {
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+  background:#fff;
+  line-height:1.7;
+}
+a {color:inherit;text-decoration:none}
+button,input,select,textarea {font:inherit}
+button {cursor:pointer}
+.container {width:min(1160px,92%);margin:auto}
+.section {padding:85px 0}
+.section-heading {max-width:760px;margin:0 auto 42px;text-align:center}
+.section-heading h2 {font-size:clamp(28px,4vw,42px);line-height:1.2;margin:12px 0}
+.section-heading p {color:#637080}
+.eyebrow {
+  color:#a47a2e;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.section-copy p {margin:0 0 16px;color:#566373}
+.site-header {
+  position:sticky;top:0;z-index:1000;
+  background:rgba(8,19,33,.98);
+  color:white;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:13px 4%;
+  border-bottom:1px solid rgba(213,173,89,.25);
+}
+.brand {display:flex;align-items:center;gap:12px}
+.brand-logo {
+  width:53px;height:53px;border-radius:50%;border:2px solid var(--gold);
+  object-fit:cover;background:white;flex-shrink:0;
+}
+.brand-copy strong {display:block;font-size:13px;letter-spacing:1px}
+.brand-copy small {color:var(--gold);letter-spacing:3px}
+.main-nav {display:flex;align-items:center;gap:19px}
+.main-nav a {font-size:12px;color:#e7ebef}
+.main-nav a:hover {color:var(--gold)}
+.nav-login {border:1px solid var(--gold);padding:8px 12px;border-radius:4px}
+.menu-toggle {
+  display:none;background:none;border:1px solid var(--gold);
+  color:var(--gold);font-size:23px;padding:4px 11px;border-radius:4px;
+}
+.hero {
+  background:linear-gradient(120deg,#081321,#122b43);
+  color:white;padding:105px 0 95px;overflow:hidden;
+}
+.hero-grid {display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center}
+.hero h1 {font-size:clamp(38px,6vw,67px);line-height:1.08;margin:17px 0}
+.hero h1 span {color:var(--gold)}
+.hero-lead {font-size:18px;color:#d2dbe4;max-width:680px}
+.hero-note {color:#aab5c2;margin-top:25px;font-size:13px}
+.hero-art {
+  width:260px;height:260px;margin:auto;border:2px solid var(--gold);
+  border-radius:50%;overflow:hidden;
+  box-shadow:0 0 0 17px rgba(213,173,89,.08),0 0 0 35px rgba(213,173,89,.04);
+  position:relative;background:white;
+}
+.hero-art img {width:100%;height:100%;object-fit:cover;display:block}
+.actions {display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
+.btn {
+  display:inline-block;padding:12px 19px;border-radius:4px;
+  font-weight:800;font-size:13px;border:1px solid transparent;
+  transition:.2s;
+}
+.btn-gold {background:var(--gold);color:#101b27}
+.btn-gold:hover {background:var(--gold2)}
+.btn-outline {border-color:var(--gold);color:var(--gold);background:transparent}
+.btn-outline:hover {background:var(--gold);color:#101b27}
+.btn-dark {background:var(--navy);color:white}
+.trust-strip {
+  background:#101f30;color:#fff;padding:19px 4%;
+  display:flex;justify-content:center;gap:35px;flex-wrap:wrap;
+  font-size:11px;letter-spacing:2px;font-weight:bold;
+}
+.trust-strip span:before {content:"◆";color:var(--gold);margin-right:10px}
+.intro-grid {display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:start}
+.intro-grid h2 {font-size:clamp(28px,4vw,40px);line-height:1.2;margin-top:12px}
+.dark-section {background:var(--navy);color:white}
+.dark-section .section-heading p {color:#c0cad4}
+.cards {display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card {
+  background:white;border:1px solid var(--border);border-radius:9px;
+  padding:27px;box-shadow:0 8px 25px rgba(0,0,0,.045);
+}
+.dark-section .card {background:#11263c;border-color:#29415a;color:white}
+.card-number {color:var(--gold);font-weight:900;letter-spacing:2px}
+.card h3 {font-size:21px;margin:10px 0}
+.card p {color:#687584;font-size:14px}
+.dark-section .card p {color:#c4cfda}
+.card ul {padding-left:19px;margin:15px 0;color:#687584;font-size:14px}
+.dark-section .card ul {color:#c4cfda}
+.card li {margin:6px 0}
+.card .btn {margin-top:16px}
+.category-grid {
+  display:grid;grid-template-columns:repeat(4,1fr);gap:13px;
+}
+.category {
+  padding:17px;background:var(--light);border-left:3px solid var(--gold);
+  border-radius:5px;font-size:14px;font-weight:700;
+}
+.category small {display:block;font-weight:400;color:#6c7886;margin-top:5px}
+.membership-intro {max-width:790px;margin:auto;text-align:center}
+.notice {
+  background:#fff8e9;border:1px solid #ead5a8;border-radius:6px;
+  padding:17px;margin:22px 0;color:#69552f;font-size:14px;
+}
+.search-panel {
+  background:var(--navy);padding:28px;border-radius:9px;color:white;
+}
+.search-row {display:grid;grid-template-columns:1fr 190px auto;gap:10px}
+input,select,textarea {
+  width:100%;padding:12px;border:1px solid #d6dce2;
+  border-radius:5px;background:white;color:#172536;
+}
+textarea {min-height:115px;resize:vertical}
+label {display:block;font-size:13px;font-weight:700;margin:12px 0 6px}
+.form-grid {display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.form-box {
+  max-width:850px;margin:auto;padding:30px;
+  background:white;border:1px solid var(--border);
+  border-radius:9px;box-shadow:0 10px 35px rgba(0,0,0,.05);
+}
+.form-box h3 {margin:8px 0 14px;font-size:24px}
+.form-note {font-size:12px;color:#687584;margin-top:12px}
+.checkline {display:flex;align-items:flex-start;gap:9px;margin:13px 0;font-size:13px}
+.checkline input {width:auto;margin-top:5px}
+.form-result {
+  margin-top:16px;padding:13px;border-radius:5px;
+  background:#eef5f0;color:#245c3d;font-size:14px;display:none;
+}
+.form-result.show {display:block}
+.profile-box {
+  background:#f4f6f8;padding:23px;border-radius:8px;margin-top:20px;
+}
+.recognition-grid {display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.recognition-card {
+  background:#f6f7f8;border:1px solid var(--border);
+  padding:27px;border-radius:8px;
+}
+.recognition-card h3 {margin:10px 0}
+.recognition-card strong {display:block;color:#80601e;margin-top:12px}
+.legal details {
+  border-bottom:1px solid var(--border);padding:17px 0;
+}
+.legal summary {font-weight:800;cursor:pointer}
+.legal details p {color:#667381;margin-top:12px;font-size:14px}
+.contact-grid {display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contact-card {padding:25px;background:#f5f6f7;border-radius:8px}
+.site-footer {background:#06101c;color:white;padding:48px 4% 20px}
+.footer-top {display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.footer-brand strong {display:block;color:var(--gold);letter-spacing:1px}
+.footer-brand p {color:#aab5c2;font-size:13px;margin-top:8px}
+.footer-logo {width:55px;height:55px;border-radius:50%;border:2px solid var(--gold);object-fit:cover;background:white;margin-bottom:10px}
+.footer-links {display:flex;gap:17px;flex-wrap:wrap}
+.footer-links a {font-size:12px;color:#c4ccd5}
+.copyright {border-top:1px solid #263444;margin-top:30px;padding-top:18px;text-align:center;color:#8794a2;font-size:12px}
+.small-print {font-size:12px;color:#718090}
+.hidden {display:none!important}
+@media(max-width:950px) {
+  .main-nav {gap:10px}
+  .main-nav a {font-size:11px}
+  .category-grid {grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:760px) {
+  .menu-toggle {display:block}
+  .main-nav {
+    display:none;position:absolute;top:78px;left:0;right:0;
+    background:#081321;padding:18px 5%;flex-direction:column;
+    align-items:stretch;border-top:1px solid #354354;
+  }
+  .main-nav.open {display:flex}
+  .main-nav a {padding:9px;font-size:14px}
+  .hero {padding:70px 0}
+  .hero-grid,.intro-grid,.contact-grid {grid-template-columns:1fr}
+  .hero-art {width:210px;height:210px;margin-top:20px}
+  .cards {grid-template-columns:1fr}
+  .category-grid {grid-template-columns:repeat(2,1fr)}
+  .search-row {grid-template-columns:1fr}
+  .form-grid,.recognition-grid {grid-template-columns:1fr}
+  .section {padding:60px 0}
+}
+@media(max-width:420px) {
+  .category-grid {grid-template-columns:1fr}
+  .form-box {padding:19px}
+  .trust-strip {gap:15px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="Awesome Builders Network home">
+    <img src="icon-192.png" alt="Awesome Builders Network Logo" class="brand-logo">
+    <span class="brand-copy">
+      <strong>AWESOME BUILDERS NETWORK</strong>
+      <small>ABN-7742</small>
+    </span>
+  </a>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+  <nav class="main-nav" id="mainNav">
+    <a href="#home">Home</a>
+    <a href="#introduction">About ABN</a>
+    <a href="#vision">Vision & Mission</a>
+    <a href="#industries">Industries</a>
+    <a href="#membership">Membership</a>
+    <a href="#directory">Network Directory</a>
+    <a href="#recognition">Recognition</a>
+    <a href="#application">Apply</a>
+    <a href="#contact">Contact</a>
+    <a class="nav-login" href="#member-access">Member Access</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">A CONNECTED INDUSTRY NETWORK</p>
+      <h1>ONE NETWORK.<br><span>THE ENTIRE INDUSTRY.</span></h1>
+      <p class="hero-lead">
+        Connecting businesses, professional engineers, technical practitioners,
+        skilled tradespeople, suppliers and service providers across the building,
+        construction, engineering and infrastructure industries.
+      </p>
+      <div class="actions">
+        <a class="btn btn-gold" href="#membership">Explore Membership</a>
+        <a class="btn btn-outline" href="#directory">Explore the Network</a>
+      </div>
+      <p class="hero-note">Discover expertise. Build connections. Strengthen the industry.</p>
+    </div>
+    <div class="hero-art" aria-label="ABN branded emblem">
+      <img src="icon-192.png" alt="ABN Logo">
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <span>BUSINESSES</span>
+  <span>PROFESSIONALS</span>
+  <span>TECHNICAL & TRADE</span>
+  <span>SUPPLIERS</span>
+  <span>INDUSTRY SERVICES</span>
+</div>
+
+<!-- INTRODUCTION -->
+<section class="section" id="introduction">
+  <div class="container intro-grid">
+    <div>
+      <p class="eyebrow">INTRODUCTION</p>
+      <h2>A network built to connect the people and businesses that build our world.</h2>
+    </div>
+    <div class="section-copy">
+      <p>
+        Awesome Builders Network (ABN-7742) is a structured industry network
+        created to connect businesses and individuals across the building,
+        construction, engineering, infrastructure and related sectors.
+      </p>
+      <p>
+        ABN provides a platform where businesses can build visibility, present
+        their services and products, and develop useful industry connections.
+        Professionals can establish their professional presence, showcase
+        relevant expertise and connect with other industry participants.
+      </p>
+      <p>
+        Technical practitioners and skilled tradespeople are also recognised
+        as important contributors to the industry. ABN provides distinct
+        membership pathways that reflect the applicant's actual business,
+        professional or trade identity.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- VISION / MISSION / OBJECTIVES -->
+<section class="section dark-section" id="vision">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">OUR FOUNDATION</p>
+      <h2>Purpose with a clear direction.</h2>
+      <p>Building a connected, visible and recognised industry network.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <span class="card-number">01</span>
+        <h3>Our Vision</h3>
+        <p>
+          To become a trusted and accessible network that connects,
+          recognises and promotes businesses and industry professionals,
+          creating opportunities for visibility, collaboration and
+          sustainable development across the building and infrastructure
+          industries.
+        </p>
+      </article>
+      <article class="card">
+        <span class="card-number">02</span>
+        <h3>Our Mission</h3>
+        <p>
+          To provide an organised platform through which eligible businesses,
+          professionals, technical practitioners, suppliers and service
+          providers can present their identities, connect with relevant
+          industry participants and access structured networking opportunities.
+        </p>
+      </article>
+      <article class="card">
+        <span class="card-number">03</span>
+        <h3>Our Objectives</h3>
+        <ul>
+          <li>Improve industry visibility and discoverability.</li>
+          <li>Recognise professional and technical expertise.</li>
+          <li>Encourage responsible industry connections.</li>
+          <li>Support business presentation and development.</li>
+          <li>Promote accurate identity and credential verification.</li>
+          <li>Encourage collaboration across related sectors.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="section" id="industries">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">INDUSTRIES WE CONNECT</p>
+      <h2>One network across related industries.</h2>
+      <p>
+        ABN is designed for the wider building, construction, engineering,
+        infrastructure, supply and technical services ecosystem.
+      </p>
+    </div>
+
+    <div class="category-grid">
+      <div class="category">Building & Construction<small>Builders, contractors and construction firms</small></div>
+      <div class="category">Architecture & Design<small>Architects, designers and planning services</small></div>
+      <div class="category">Civil Engineering<small>Roads, bridges, drainage and infrastructure</small></div>
+      <div class="category">Structural Engineering<small>Structural design and engineering services</small></div>
+      <div class="category">Mechanical Engineering<small>Mechanical systems and installations</small></div>
+      <div class="category">Electrical Engineering<small>Electrical design and engineering services</small></div>
+      <div class="category">Quantity Surveying<small>Cost planning, estimation and project valuation</small></div>
+      <div class="category">Land Surveying & Geomatics<small>Surveying, mapping and spatial services</small></div>
+      <div class="category">Project Management<small>Construction and project management</small></div>
+      <div class="category">Building Technology<small>Building technology and site supervision</small></div>
+      <div class="category">Environmental & HSE<small>Environmental, safety and compliance services</small></div>
+      <div class="category">Water & Infrastructure<small>Water resources, boreholes and drainage</small></div>
+      <div class="category">Building Materials<small>Manufacturers, dealers and distributors</small></div>
+      <div class="category">Tools & Equipment<small>Machinery, tools, plant and equipment</small></div>
+      <div class="category">Industrial Supplies<small>Industrial products and technical supplies</small></div>
+      <div class="category">Renewable Energy<small>Solar and related energy services</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section class="section" id="membership" style="background:#f5f6f8">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">ABN MEMBERSHIP</p>
+      <h2>Three membership pathways. One industry network.</h2>
+      <p>
+        Select the membership pathway that accurately represents your
+        organisation, professional identity or technical and trade practice.
+      </p>
+    </div>
+
+    <div class="cards">
+      <article class="card" id="business-membership">
+        <span class="card-number">01</span>
+        <h3>Business Membership</h3>
+        <p>
+          For registered and eligible businesses operating in construction,
+          engineering, infrastructure, supplies and related industries.
+        </p>
+        <ul>
+          <li>Business profile and visibility.</li>
+          <li>Presentation of services and products.</li>
+          <li>Business contact and enquiry information.</li>
+          <li>Access to relevant industry connections.</li>
+          <li>Eligible independent business website service.</li>
+          <li>Applicable marketing and customer-care options.</li>
+          <li>Participation in approved ABN programmes.</li>
+        </ul>
+        <a class="btn btn-gold" href="#application" onclick="chooseType('Business')">Apply for Business Membership</a>
+      </article>
+
+      <article class="card" id="professional-membership">
+        <span class="card-number">02</span>
+        <h3>Professional Membership</h3>
+        <p>
+          For professional engineers and other relevant qualified
+          professionals seeking professional visibility and industry
+          connections.
+        </p>
+        <ul>
+          <li>Individual professional profile.</li>
+          <li>Qualifications and expertise presentation.</li>
+          <li>Professional experience and project showcase.</li>
+          <li>Industry networking opportunities.</li>
+          <li>Professional recognition opportunities.</li>
+          <li>Relevant professional programme access.</li>
+          <li>Credential status displayed accurately after review.</li>
+        </ul>
+        <a class="btn btn-gold" href="#application" onclick="chooseType('Professional')">Apply as a Professional</a>
+      </article>
+
+      <article class="card" id="trade-membership">
+        <span class="card-number">03</span>
+        <h3>Technical & Trade Membership</h3>
+        <p>
+          For skilled artisans, certified technicians, vocational graduates,
+          apprentices and experienced trade practitioners.
+        </p>
+        <ul>
+          <li>Individual technical or trade profile.</li>
+          <li>Skills and specialisation presentation.</li>
+          <li>Relevant certificates and training details.</li>
+          <li>Work portfolio and experience showcase.</li>
+          <li>Industry networking opportunities.</li>
+          <li>Recognition appropriate to verified status.</li>
+          <li>Access to applicable ABN programmes.</li>
+        </ul>
+        <a class="btn btn-gold" href="#application" onclick="chooseType('Technical & Trade')">Apply as a Technical Practitioner</a>
+      </article>
+    </div>
+
+    <div class="notice">
+      <strong>Subscription policy:</strong> ABN membership subscriptions are
+      weekly or monthly only. Annual subscriptions are not offered under the
+      current policy. Applicable prices, renewal conditions and any separate
+      website service charges will be disclosed before payment is enabled.
+    </div>
+    <p class="small-print">
+      There is no geographical cap on similar businesses or professionals.
+      Membership is subject to the applicable verification and approval process.
+    </p>
+  </div>
+</section>
+
+<!-- PROFESSIONAL RECOGNITION -->
+<section class="section" id="professional-recognition">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">PROFESSIONAL RECOGNITION</p>
+      <h2>Expertise deserves accurate representation.</h2>
+      <p>
+        ABN recognises professional identity while respecting the different
+        registration, licensing and certification requirements that apply
+        across occupations and jurisdictions.
+      </p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <h3>Registered or Licensed</h3>
+        <p>
+          For individuals whose relevant registration or licence has been
+          checked with the appropriate professional or regulatory body,
+          where applicable.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Certified or Qualified</h3>
+        <p>
+          For individuals presenting relevant academic, technical,
+          vocational or professional certificates that have been reviewed.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Experienced Practitioner</h3>
+        <p>
+          For experienced practitioners whose work history and relevant
+          evidence have been reviewed. Experience alone does not imply
+          statutory registration or licensing.
+        </p>
+      </article>
+    </div>
+    <div class="notice">
+      ABN membership does not itself grant a professional licence,
+      statutory registration or permission to practise a regulated
+      occupation. Credential claims are subject to verification.
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL AND TRADE CATEGORIES -->
+<section class="section" style="background:#f5f6f8" id="technical-trades">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">TECHNICAL & TRADE COMMUNITY</p>
+      <h2>Recognising the people who make projects happen.</h2>
+      <p>
+        Technical and trade practitioners are essential contributors to
+        building, construction and infrastructure delivery.
+      </p>
+    </div>
+    <div class="category-grid">
+      <div class="category">Plumbing & Pipe Installation</div>
+      <div class="category">Electrical Installation</div>
+      <div class="category">Carpentry & Joinery</div>
+      <div class="category">Masonry & Bricklaying</div>
+      <div class="category">Painting & Decoration</div>
+      <div class="category">Tiling & Flooring</div>
+      <div class="category">Roofing Installation</div>
+      <div class="category">POP & Ceiling Installation</div>
+      <div class="category">Welding & Metal Fabrication</div>
+      <div class="category">Steel Fixing & Reinforcement</div>
+      <div class="category">Glass & Aluminium Works</div>
+      <div class="category">Waterproofing Services</div>
+      <div class="category">HVAC & Refrigeration</div>
+      <div class="category">Borehole & Water Systems</div>
+      <div class="category">Solar Installation</div>
+      <div class="category">Road Paving & Asphalt</div>
+      <div class="category">Equipment Operators</div>
+      <div class="category">Landscaping & External Works</div>
+      <div class="category">Plastering & Screeding</div>
+      <div class="category">Cabinetmaking & Woodwork</div>
+      <div class="category">Locksmithing & Metal Works</div>
+      <div class="category">Other Specialist Trades</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTORY -->
+<section class="section dark-section" id="directory">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">NETWORK DIRECTORY</p>
+      <h2>Find businesses and industry professionals.</h2>
+      <p>
+        Search the ABN network by business name, profession, service or
+        specialisation. Approved member listings will appear when the
+        directory is connected to the membership database.
+      </p>
+    </div>
+
+    <div class="search-panel">
+      <div class="search-row">
+        <input id="directorySearch" type="search" placeholder="Search business, profession, service or skill">
+        <select id="directoryType">
+          <option value="">All membership types</option>
+          <option>Business</option>
+          <option>Professional</option>
+          <option>Technical & Trade</option>
+        </select>
+        <button class="btn btn-gold" id="searchButton" type="button">Search</button>
+      </div>
+      <p id="searchMessage" style="margin-top:15px;color:#d5dce4;font-size:13px" aria-live="polite">
+        No public member listings have been published yet.
+      </p>
+    </div>
+    <p class="small-print" style="color:#b8c3ce;margin-top:15px">
+      No fictional or unverified members are displayed. Directory results
+      require approved member records and a connected database.
+    </p>
+  </div>
+</section>
+
+<!-- APPLICATION -->
+<section class="section" id="application">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">BECOME PART OF ABN</p>
+      <h2>Start your membership application.</h2>
+      <p>
+        Complete the initial application details. The relevant verification
+        requirements will be sent to your business email after the live
+        registration system is connected.
+      </p>
+    </div>
+
+    <form class="form-box" id="applicationForm">
+      <p class="eyebrow">MEMBERSHIP APPLICATION</p>
+      <h3>Applicant information</h3>
+
+      <div class="form-grid">
+        <div>
+          <label for="applicantType">Membership pathway *</label>
+          <select id="applicantType" required>
+            <option value="">Choose membership type</option>
+            <option>Business</option>
+            <option>Professional</option>
+            <option>Technical & Trade</option>
+          </select>
+        </div>
+        <div>
+          <label for="fullName">Full name *</label>
+          <input id="fullName" required autocomplete="name">
+        </div>
+        <div>
+          <label for="businessName">Business / organisation name</label>
+          <input id="businessName" autocomplete="organization">
+        </div>
+        <div>
+          <label for="email">Business email address *</label>
+          <input id="email" type="email" required autocomplete="email">
+        </div>
+        <div>
+          <label for="phone">Phone number *</label>
+          <input id="phone" type="tel" required autocomplete="tel">
+        </div>
+        <div>
+          <label for="location">City, State and Country *</label>
+          <input id="location" required placeholder="e.g. Ijebu-Ode, Ogun State, Nigeria">
+        </div>
+        <div>
+          <label for="mainCategory">Main industry / specialisation *</label>
+          <select id="mainCategory" required>
+            <option value="">Select a category</option>
+            <option>Building & Construction</option>
+            <option>Architecture & Design</option>
+            <option>Civil Engineering</option>
+            <option>Structural Engineering</option>
+            <option>Mechanical Engineering</option>
+            <option>Electrical Engineering</option>
+            <option>Quantity Surveying</option>
+            <option>Land Surveying & Geomatics</option>
+            <option>Project Management</option>
+            <option>Building Technology</option>
+            <option>Environmental & HSE</option>
+            <option>Building Materials & Supplies</option>
+            <option>Tools & Equipment</option>
+            <option>Plumbing</option>
+            <option>Electrical Installation</option>
+            <option>Carpentry & Joinery</option>
+            <option>Masonry & Bricklaying</option>
+            <option>Painting & Decoration</option>
+            <option>Tiling & Flooring</option>
+            <option>Roofing & Ceiling</option>
+            <option>Welding & Metal Fabrication</option>
+            <option>Glass & Aluminium</option>
+            <option>Borehole & Water Systems</option>
+            <option>Solar & Renewable Energy</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="credentialStatus">Credential / experience status</label>
+          <select id="credentialStatus">
+            <option value="">Select if applicable</option>
+            <option>Registered / licensed, where applicable</option>
+            <option>Certified</option>
+            <option>Academic or vocational qualification</option>
+            <option>Apprentice / trainee</option>
+            <option>Experienced practitioner</option>
+            <option>Not applicable</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="description">Briefly describe your business, profession or skills *</label>
+      <textarea id="description" required placeholder="Tell ABN about your services, professional practice, skills or experience."></textarea>
+
+      <label class="checkline">
+        <input type="checkbox" id="termsAccepted" required>
+        <span>I have read and agree to the ABN Terms & Conditions.</span>
+      </label>
+
+      <label class="checkline">
+        <input type="checkbox" id="privacyAccepted" required>
+        <span>I have read the ABN Privacy Notice and understand how my application information will be used.</span>
+      </label>
+
+      <label class="checkline">
+        <input type="checkbox" id="accuracyAccepted" required>
+        <span>I confirm that the information I have provided is accurate to the best of my knowledge.</span>
+      </label>
+
+      <button class="btn btn-gold" type="submit">Submit Application Preview</button>
+      <p class="form-note">
+        Demonstration only: this page does not transmit, store or email
+        application details. Do not enter sensitive identity documents,
+        passwords, bank PINs or payment card information here.
+      </p>
+      <div class="form-result" id="applicationResult" role="status" aria-live="polite"></div>
+    </form>
+
+    <div class="profile-box">
+      <h3>How the ABN application process works</h3>
+      <ol style="padding-left:20px">
+        <li>Applicant completes registration.</li>
+        <li>ABN sends the applicable verification requirements to the applicant's business email.</li>
+        <li>Applicant submits the requested verification materials through the approved secure channel.</li>
+        <li>ABN reviews the submitted materials.</li>
+        <li>ABN sends the applicable payment details/list and interview date.</li>
+      </ol>
+      <p class="form-note">
+        This sequence will be automated after the secure backend, email
+        service and administrative review system are connected.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- VENDOR RECOGNITION -->
+<section class="section" id="recognition" style="background:#f5f6f8">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">ABN VENDOR APPRECIATION & RECOGNITION</p>
+      <h2>Honest experiences deserve recognition.</h2>
+      <p>
+        ABN values honest feedback from approved business members.
+        Testimonials may be positive, neutral or constructive.
+        A reward is not conditional on giving positive feedback.
+      </p>
+    </div>
+
+    <div class="recognition-grid">
+      <article class="recognition-card">
+        <span class="card-number">01</span>
+        <h3>Subscription Discount</h3>
+        <p>
+          Eligible approved vendors may receive a discount on an ABN
+          weekly or monthly subscription after submitting an honest,
+          consented testimonial that meets the published programme rules.
+        </p>
+        <strong>The discount rate and eligibility rules will be announced before the programme opens.</strong>
+      </article>
+      <article class="recognition-card">
+        <span class="card-number">02</span>
+        <h3>One Month of Complimentary Customer Care</h3>
+        <p>
+          Eligible vendors may receive 30 days of complimentary customer-care
+          service on their own personal or vendor website, subject to the
+          published programme scope.
+        </p>
+        <strong>The complimentary month will not be deducted from or counted as part of the vendor's paid subscription period.</strong>
+      </article>
+    </div>
+
+    <form class="form-box" id="testimonialForm" style="margin-top:28px">
+      <p class="eyebrow">SHARE YOUR EXPERIENCE</p>
+      <h3>Vendor testimonial submission</h3>
+
+      <label for="testimonialBusiness">Business name *</label>
+      <input id="testimonialBusiness" required>
+
+      <label for="testimonialName">Your name / role *</label>
+      <input id="testimonialName" required>
+
+      <label for="testimonialText">Your honest experience *</label>
+      <textarea id="testimonialText" required placeholder="Share your experience, including constructive feedback if applicable."></textarea>
+
+      <label class="checkline">
+        <input type="checkbox" id="testimonialConsent" required>
+        <span>I consent to ABN reviewing this testimonial and contacting me about it. Publication requires separate approval.</span>
+      </label>
+
+      <button class="btn btn-gold" type="submit">Preview Testimonial</button>
+      <p class="form-note">
+        This demonstration does not submit or publish the testimonial.
+        The final programme rules, discount amount, eligibility, frequency
+        and approval process must be published before rewards are offered.
+      </p>
+      <div class="form-result" id="testimonialResult" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<!-- MEMBER ACCESS -->
+<section class="section dark-section" id="member-access">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">MEMBER AREA</p>
+      <h2>Member access</h2>
+      <p>
+        Approved members will be able to access their profiles and relevant
+        membership services through a secure member portal.
+      </p>
+    </div>
+    <div class="card" style="max-width:600px;margin:auto;text-align:center">
+      <h3>Secure Member Portal</h3>
+      <p>
+        Member login, password recovery, profile management, subscription
+        records and member dashboards will be activated after secure
+        authentication and backend integration.
+      </p>
+      <button class="btn btn-outline" type="button" disabled>Member Login Not Yet Activated</button>
+    </div>
+  </div>
+</section>
+
+<!-- TERMS -->
+<section class="section legal" id="terms">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">PLEASE READ</p>
+      <h2>ABN Terms & Conditions</h2>
+      <p>Proposed public membership terms. Final legal review is required before launch.</p>
+    </div>
+
+    <details open>
+      <summary>1. ABN's role</summary>
+      <p>
+        Awesome Builders Network (ABN-7742) operates as an industry network
+        and platform provider. It provides a structured environment for
+        discovery, profiles, business visibility and connections. Unless
+        expressly agreed in a separate written contract, ABN is not a party
+        to transactions between members and their customers.
+      </p>
+    </details>
+
+    <details>
+      <summary>2. Independent businesses and professionals</summary>
+      <p>
+        Each member operates independently and remains responsible for
+        its own business, professional practice, staff, contractors,
+        products, services, quotations, pricing, licences, permits,
+        tax obligations, customer relationships, delivery and performance.
+      </p>
+    </details>
+
+    <details>
+      <summary>3. Transactions, payments and fraud</summary>
+      <p>
+        Members and customers are responsible for carrying out appropriate
+        checks before entering transactions. Members are responsible for
+        their own quotations, invoices, payment instructions, receipts,
+        refunds, fulfilment and customer communications. ABN does not
+        receive or control member-to-customer payments unless a specific
+        payment service is expressly introduced in a separate agreement.
+        ABN does not guarantee that a member, customer, payment instruction
+        or transaction is genuine or successful. ABN is not responsible
+        for fraud, fake transactions, non-payment, non-delivery or misconduct
+        independently committed by a member or customer, except to the
+        extent liability cannot lawfully be excluded or arises from ABN's
+        own acts or omissions.
+      </p>
+    </details>
+
+    <details>
+      <summary>4. Vendor websites and published content</summary>
+      <p>
+        Where a business website is provided, the vendor is responsible
+        for the accuracy, legality and currency of its business identity,
+        descriptions, claims, prices, products, services, images, contact
+        details, policies and other supplied content. Vendors must have
+        the rights and permissions needed to publish all material they
+        submit. Vendors must not publish misleading, unlawful, infringing,
+        harmful or deceptive content.
+      </p>
+    </details>
+
+    <details>
+      <summary>5. Website access, code and security</summary>
+      <p>
+        Members must protect their account credentials and promptly report
+        suspected unauthorised access. Website code, platform components,
+        designs, hosting arrangements and usage rights will be governed
+        by the applicable service agreement. ABN will take reasonable
+        steps to protect systems under its control but cannot promise
+        that any internet service is completely secure or uninterrupted.
+        Nothing in these terms removes obligations imposed on ABN by law.
+      </p>
+    </details>
+
+    <details>
+      <summary>6. Verification and approval</summary>
+      <p>
+        Applicants must review and accept the applicable terms before
+        proceeding. ABN will provide relevant verification requirements
+        after registration. Submission of an application or documents
+        does not guarantee approval. ABN may request clarification,
+        decline an application or suspend a listing where there are
+        reasonable compliance, accuracy, safety or integrity concerns,
+        subject to applicable law and fair procedures.
+      </p>
+    </details>
+
+    <details>
+      <summary>7. Membership subscriptions</summary>
+      <p>
+        Membership subscription periods are weekly or monthly only under
+        the current policy. No annual membership plan is offered.
+        Applicable prices, renewal terms, payment methods, cancellation
+        rules and any separate website service charges will be disclosed
+        before payment is enabled. Membership pricing is not published
+        here while operating costs are being assessed.
+      </p>
+    </details>
+
+    <details>
+      <summary>8. No guarantee of commercial results</summary>
+      <p>
+        ABN may provide visibility and networking opportunities but does
+        not guarantee leads, sales, contracts, income, customer numbers,
+        rankings, business growth or project awards. Members make their
+        own commercial decisions and must conduct due diligence.
+      </p>
+    </details>
+
+    <details>
+      <summary>9. Referrals and Ambassador programme</summary>
+      <p>
+        Referral links, tracking, rewards or Ambassador benefits will
+        operate only under separate published programme rules. No
+        commission, reward or entitlement should be assumed unless its
+        terms have been expressly published and accepted.
+      </p>
+    </details>
+
+    <details>
+      <summary>10. Content and member conduct</summary>
+      <p>
+        Members must provide truthful information, respect intellectual
+        property and privacy, and communicate professionally. ABN may
+        remove content or restrict access where reasonably necessary
+        to enforce these terms, protect users or comply with law.
+      </p>
+    </details>
+
+    <details>
+      <summary>11. Privacy and information</summary>
+      <p>
+        Personal information will be collected and used for stated
+        application, membership, verification, security and communication
+        purposes in accordance with the ABN Privacy Notice and applicable
+        Nigerian data-protection law. Verification information must be
+        handled through an approved secure process.
+      </p>
+    </details>
+
+    <details>
+      <summary>12. Suspension and termination</summary>
+      <p>
+        ABN may suspend or terminate access for material breach, fraud
+        concerns, unlawful conduct, misuse of the platform or non-payment
+        of disclosed fees, subject to applicable law and any applicable
+        notice or review process. Members may request cancellation under
+        the published cancellation policy.
+      </p>
+    </details>
+
+    <details>
+      <summary>13. Changes and governing law</summary>
+      <p>
+        ABN may update platform features and these terms. Material changes
+        will be communicated through appropriate channels. The final
+        agreement will identify the applicable governing law,
+        dispute-resolution process and ABN's registered business details
+        before launch.
+      </p>
+    </details>
+
+    <div class="notice">
+      <strong>Legal launch requirement:</strong> Confirm ABN's legal entity
+      name, registered address, official contact channels, effective date,
+      complaint process and final governing-law wording. Have the final
+      terms reviewed by a qualified Nigerian legal practitioner.
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section class="section" id="privacy" style="background:#f5f6f8">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">YOUR INFORMATION</p>
+      <h2>Privacy Notice</h2>
+    </div>
+    <div class="section-copy">
+      <p>
+        ABN intends to collect only information reasonably required for
+        application processing, member profiles, verification, platform
+        security and communication.
+      </p>
+      <p>
+        Information submitted by applicants should be used only for
+        legitimate and disclosed ABN purposes. Access to personal
+        information should be limited to authorised personnel and
+        appropriate service providers under suitable safeguards.
+      </p>
+      <p>
+        Sensitive verification documents should be requested only after
+        the applicant has received the applicable requirements and should
+        be submitted through an approved secure channel once implemented.
+        Do not submit passwords, bank PINs or payment card details through
+        public forms.
+      </p>
+      <p>
+        Before launch, ABN must publish complete information about the
+        purposes and lawful basis for processing, retention periods,
+        data-sharing arrangements, security measures and how individuals
+        can exercise their applicable data rights under Nigerian
+        data-protection law.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">GET IN TOUCH</p>
+      <h2>Connect with ABN</h2>
+      <p>
+        For membership enquiries and platform information, use the
+        official ABN contact channels when they are published.
+      </p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Membership enquiries</h3>
+        <p>
+          Interested businesses, professionals and technical practitioners
+          can review the membership pathways and application process.
+        </p>
+        <a class="btn btn-gold" href="#application">Start Application</a>
+      </div>
+      <div class="contact-card">
+        <h3>Official contact details</h3>
+        <p>
+          ABN's official email address, telephone number, registered
+          business address and social media links will be added after
+          they are confirmed.
+        </p>
+        <p class="small-print">No unverified contact information is displayed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="icon-192.png" alt="ABN Logo" class="footer-logo">
+        <strong>AWESOME BUILDERS NETWORK</strong>
+        <span>ABN-7742</span>
+        <p>One network. The entire industry.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#introduction">About</a>
+        <a href="#vision">Vision</a>
+        <a href="#industries">Industries</a>
+        <a href="#membership">Membership</a>
+        <a href="#directory">Directory</a>
+        <a href="#recognition">Recognition</a>
+        <a href="#terms">Terms</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <p class="copyright">
+      © <span id="year"></span> Awesome Builders Network (ABN-7742).
+      All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menuToggle");
+  const mainNav = document.getElementById("mainNav");
+
+  // Mobile navigation
+  menuToggle.addEventListener("click", function () {
+    const opened = mainNav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(opened));
+    menuToggle.setAttribute(
+      "aria-label",
+      opened ? "Close navigation" : "Open navigation"
+    );
+    menuToggle.textContent = opened ? "✕" : "☰";
+  });
+
+  mainNav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      mainNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation");
+      menuToggle.textContent = "☰";
+    });
+  });
+
+  // Footer year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Directory search demonstration
+  const searchButton = document.getElementById("searchButton");
+  const searchInput = document.getElementById("directorySearch");
+  const directoryType = document.getElementById("directoryType");
+  const searchMessage = document.getElementById("searchMessage");
+
+  function runDirectorySearch() {
+    const term = searchInput.value.trim();
+    const type = directoryType.value;
+
+    if (!term && !type) {
+      searchMessage.textContent =
+        "Enter a business, profession, service or select a membership type.";
+      return;
+    }
+
+    searchMessage.textContent =
+      "Your search is ready for the ABN directory database. No public member listings are currently connected to this demonstration website.";
+  }
+
+  searchButton.addEventListener("click", runDirectorySearch);
+  searchInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") runDirectorySearch();
+  });
+  directoryType.addEventListener("change", function () {
+    if (searchInput.value.trim() || directoryType.value) runDirectorySearch();
+  });
+
+  // Membership pathway selection from membership cards
+  window.chooseType = function (type) {
+    const select = document.getElementById("applicantType");
+    select.value = type;
+    document.getElementById("application").scrollIntoView({behavior:"smooth"});
+  };
+
+  // Application form: preview only, no false claim of registration
+  const applicationForm = document.getElementById("applicationForm");
+  const applicationResult = document.getElementById("applicationResult");
+
+  applicationForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (!applicationForm.reportValidity()) return;
+
+    applicationResult.textContent =
+      "Your form has passed the local demonstration checks. It has NOT been sent to ABN, saved, or emailed. The secure registration backend and email service must be connected before real applications can be received. The agreed next step in the live system is an automatic email containing your applicable verification requirements.";
+    applicationResult.classList.add("show");
+  });
+
+  // Testimonial preview only
+  const testimonialForm = document.getElementById("testimonialForm");
+  const testimonialResult = document.getElementById("testimonialResult");
+
+  testimonialForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (!testimonialForm.reportValidity()) return;
+
+    testimonialResult.textContent =
+      "Your testimonial has passed the local preview checks. It has NOT been submitted, saved or published. A secure testimonial submission and ABN review process must be connected first. Publication requires approval and your consent.";
+    testimonialResult.classList.add("show");
+  });
+});
+</script>
+
+</body>
+</html>
